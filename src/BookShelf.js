@@ -1,7 +1,15 @@
 import React from 'react';
 
-const BookShelf = ({ title = '', shelf = '', books = [], moveBook }) => {
-	const currentBooks = books.filter(_ => _.shelf === shelf);
+const BookShelf = ({ title, shelf, books, moveBook }) => {
+	const currentBooks = shelf === 'All' ? books : books.filter(_ => _.shelf === shelf);
+	console.log(currentBooks);
+	const options = [
+		{value: "moveTo", label: "Move to..."},
+		{value: "currentlyReading", label: "Currently Reading"},
+		{value: "wantToRead", label: "Want to Read"},
+		{value: "read", label: "Read"},
+		{value: "none", label: "None"}
+	];
 
 	return (
 	  <div className="list-books-content">
@@ -19,28 +27,27 @@ const BookShelf = ({ title = '', shelf = '', books = [], moveBook }) => {
 									    backgroundImage: `url(${book.imageLinks.smallThumbnail})`
 								    }}></div>
 								    <div className="book-shelf-changer">
-									    <select onChange={(e) => moveBook(e, book)} >
-										    <option value="none" disabled>Move to...</option>
-										    <option value="currentlyReading">Currently Reading</option>
-										    <option value="wantToRead">Want to Read</option>
-										    <option value="read">Read</option>
-										    <option value="none">None</option>
+									    <select onChange={(e) => moveBook(e.target.value, book)} value={book.shelf} >
+										    {options.map(option => (
+										      <option className={option.value === book.shelf ? 'selected-book' : ''}
+										        disabled={option.value === 'moveTo'}
+										        key={option.label}
+								                value={option.value}>{option.label}</option>
+										    ))}
 									    </select>
 								    </div>
 							    </div>
 							    <div className="book-title">{book.title}</div>
-							    {book.authors.map(author => (
-								    <div className="book-authors">{author}</div>
-							    ))}
-
+								    {book.authors.map(author => (
+									    <div key={author} className="book-authors">{author}</div>
+								    ))}
 						    </div>
 					    </li>
 					  ))}
 				  </ol>
 			  </div>
-
 		  </div>
 	  </div>
 	)
-}
+};
 export default BookShelf
