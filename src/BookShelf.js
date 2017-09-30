@@ -2,7 +2,6 @@ import React from 'react';
 
 const BookShelf = ({ title, shelf, books, moveBook }) => {
 	const currentBooks = shelf === 'All' ? books : books.filter(_ => _.shelf === shelf);
-	console.log(currentBooks);
 	const options = [
 		{value: "moveTo", label: "Move to..."},
 		{value: "currentlyReading", label: "Currently Reading"},
@@ -17,7 +16,7 @@ const BookShelf = ({ title, shelf, books, moveBook }) => {
 			  <h2 className="bookshelf-title">{title}</h2>
 			  <div className="bookshelf-books">
 				  <ol className="books-grid">
-					  {currentBooks.map(book => (
+					  {currentBooks && currentBooks.map(book => (
 					    <li key={book.id}>
 						    <div className="book">
 							    <div className="book-top">
@@ -38,7 +37,7 @@ const BookShelf = ({ title, shelf, books, moveBook }) => {
 								    </div>
 							    </div>
 							    <div className="book-title">{book.title}</div>
-								    {book.authors.map(author => (
+								    {book.authors && book.authors.map(author => (
 									    <div key={author} className="book-authors">{author}</div>
 								    ))}
 						    </div>
