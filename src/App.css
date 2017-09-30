@@ -43,6 +43,10 @@ body, .app {
   text-align: center;
 }
 
+.selected-book {
+  background: #60ac5d;
+}
+
 .open-search {
   position: fixed;
   right: 25px;
