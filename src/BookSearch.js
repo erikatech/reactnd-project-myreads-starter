@@ -1,51 +1,45 @@
 import React, {Component} from 'react';
 import BookShelf from './BookShelf';
-import {Link} from 'react-router-dom';
-import * as BooksAPI from './BooksAPI'
+import * as BooksAPI from './BooksAPI';
+import SearchBar from './SearchBar';
+
 class BookSearch extends Component {
 
-	constructor(props) {
-		super(props);
-		this.state = {
-			books: [],
-			term: ''
-		}
-	}
+	state = {
+		books: []
+	};
 
-	search = (term) => {
-		this.setState({term});
-		BooksAPI.search(term, 20)
-		  .then((books) => this.setState({books}));
+	bookSearch = (term) => {
+		BooksAPI.search(term, 20).then((result) => {
+			if(result.error){
+				this.setState({books: []});
+			} else {
+				this.props.currentBooks.forEach(currentBook => {
+					result
+					  .filter(book => book.id === currentBook.id)
+					  .map(_ => _.shelf = currentBook.shelf);
+				});
+				this.setState({books: result});
+			}
+		})
+
 	};
 
 	render() {
 		return (
 		  <div className="search-books">
-			  <div className="search-books-bar">
-				  <Link
-					to="/"
-					className="close-search">
-					  Close
-				  </Link>
-				  <div className="search-books-input-wrapper">
-					  <input type="text"
-					         value={this.state.term}
-					         onChange={(e) => this.search(e.target.value)}
-					         placeholder="Search by title or author"/>
-				  </div>
-			  </div>
+			  <SearchBar onSearchTermChange={term => this.bookSearch(term)} />
 			  <div className="search-books-results">
 				  <ol className="books-grid">
 					  <BookShelf
-					    shelf='All'
-					    books={this.state.books}
-					    moveBook={this.props.moveBook}
+						shelf='All'
+						books={this.state.books}
+						moveBook={this.props.moveBook}
 					  />
 				  </ol>
 			  </div>
 		  </div>
 		)
 	}
-
-};
+}
 export default BookSearch;
