@@ -3,7 +3,7 @@ yarn.lock
 .DS_Store
 
 ## webstorm files
-.idea
+.idea/
 
 *.log
 
