@@ -7,12 +7,9 @@ import BookShelf from "./BookShelf";
 import BookSearch from "./BookSearch";
 
 class BooksApp extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			books: []
-		}
-	}
+	state = {
+		books: []
+	};
 
 	componentDidMount() {
 		BooksAPI.getAll().then((books) => {
@@ -23,16 +20,27 @@ class BooksApp extends Component {
 	moveBook = (shelf, book) => {
 		if (shelf !== book.shelf) {
 			BooksAPI.update(book, shelf).then(() => {
-				this.setState({books:
-				  this.state.books
-				    .map(_ => {
-				    	if(_.id === book.id){
-				    		_.shelf = shelf;
-					    }
-					    return _;
-				    })});
+				this.arrangeBooks(book, shelf);
 			});
 		}
+	};
+
+	arrangeBooks = (book, shelf) => {
+		const index = this.state.books.findIndex(currentBook => currentBook.id === book.id);
+		let books = this.state.books;
+		if (index > 0) {
+			books = this.state.books
+			  .map(_ => {
+				  if (_.id === book.id) {
+					  _.shelf = shelf;
+				  }
+				  return _;
+			  });
+		} else {
+			book.shelf = shelf;
+			books.push(book);
+		}
+		this.setState({books});
 	};
 
 	render() {
@@ -71,7 +79,9 @@ class BooksApp extends Component {
 
 
 			  <Route exact path="/search" render={() => (
-				<BookSearch />
+				<BookSearch
+				  moveBook={this.moveBook}
+				  currentBooks={this.state.books}/>
 			  )}/>
 		  </div>
 		)
