@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
+/**
+ * Component used to control the search terms
+ */
 class SearchBar extends Component {
 
-	constructor(props) {
-		super(props);
-		this.state = {term: ''};
-	}
+	state = {
+		term: ''
+	};
 
 	render() {
 		return (
@@ -26,9 +28,17 @@ class SearchBar extends Component {
 		)
 	}
 
+	/**
+	 * Handler to deal with the input onChange callback
+	 * @param term the user input
+	 */
 	onInputChange(term) {
+		// updates the current state
 		this.setState({term});
-		this.props.onSearchTermChange(term);
+		if(term.trim().length){ // check if user input is empty
+			// call the outside method passing the user input
+			this.props.onSearchTermChange(term.trim());
+		}
 	}
 }
 
