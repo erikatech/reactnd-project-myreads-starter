@@ -27,8 +27,10 @@ class BookSearch extends Component {
 				// so the book state will be set to an empty array
 				this.setState({books: []});
 			} else {
-				// we need to check if some book inside result
-				// is already added to a shelf
+				// this API method doesn't return a book with a shelf,
+				// so wee need to check if some book inside result
+				// is already added to a shelf.
+				// when we find it, we set the shelf to the book inside result.
 				this.props.currentBooks.forEach(currentBook => {
 					result
 					  .filter(book => book.id === currentBook.id)
@@ -46,14 +48,17 @@ class BookSearch extends Component {
 
 
 	render() {
+		const shelf = {
+			books: this.state.books,
+			shelf: 'All'
+		};
 		return (
 		  <div className="search-books">
 			  <SearchBar onSearchTermChange={term => this.bookSearch(term)} />
 			  <div className="search-books-results">
 				  <ol className="books-grid">
 					  <BookShelf
-						shelf='All'
-						books={this.state.books}
+						shelf={shelf}
 						moveBook={this.props.moveBook}
 					  />
 				  </ol>

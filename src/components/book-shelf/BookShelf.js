@@ -2,18 +2,16 @@ import React from 'react';
 
 /**
  * Components that represents a shelf which a book can be moved to
- * @param title
  * @param shelf the way the API understands a shelf
- * @param books to books to be rendered inside each shelf
  * @param moveBook a method that is called to move a book from a shelf to another
  * @returns {XML}
  * @constructor
  */
-const BookShelf = ({title, shelf, books, moveBook}) => {
+const BookShelf = ({shelf, moveBook}) => {
 	// as this component is used for both Main and Search pages, I created a method to distinguish the both usages
 	// if the shelf passed is equals to 'All', it means the components is being used inside BookSearch page,
 	// else we need to filter the books according to the shelf passed as props
-	const currentBooks = shelf === 'All' ? books : books.filter(_ => _.shelf === shelf);
+	const currentBooks = shelf.shelf === 'All' ? shelf.books : shelf.books.filter(_ => _.shelf === shelf.shelf);
 
 	// the select options
 	const options = [
@@ -27,14 +25,13 @@ const BookShelf = ({title, shelf, books, moveBook}) => {
 	return (
 	  <div className="list-books-content">
 		  <div className="bookshelf">
-			  <h2 className="bookshelf-title">{title}</h2>
+			  <h2 className="bookshelf-title">{shelf.title}</h2>
 			  <div className="bookshelf-books">
 				  <ol className="books-grid">
 					  {currentBooks && currentBooks.map(book => (
 						<li key={book.id}>
 							<div className="book">
 								<div className="book-top">
-									{console.log(book)}
 									<div className="book-cover" style={{
 										width: 128,
 										height: 193,

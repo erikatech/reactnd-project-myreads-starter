@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import { Debounce } from 'react-throttle';
 
 /**
  * Component used to control the search terms
@@ -19,10 +20,9 @@ class SearchBar extends Component {
 				  Close
 			  </Link>
 			  <div className="search-books-input-wrapper">
-				  <input
-					value={this.state.term}
-					onChange={event => this.onInputChange(event.target.value)}
-					placeholder="Search by title or author"/>
+				  <Debounce time="200" handler="onChange">
+					  <input onChange={event => this.onInputChange(event.target.value)} />
+				  </Debounce>
 			  </div>
 		  </div>
 		)
