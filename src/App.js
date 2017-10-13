@@ -3,8 +3,8 @@ import {Route} from 'react-router-dom';
 import {Link} from 'react-router-dom';
 import * as BooksAPI from './BooksAPI'
 import './App.css';
-import BookShelf from "./BookShelf";
-import BookSearch from "./BookSearch";
+import BookShelf from "./components/book-shelf/BookShelf";
+import BookSearch from "./components/book-search/BookSearch";
 
 /**
  * Represents the main page with all the shelves
@@ -32,42 +32,16 @@ class BooksApp extends Component {
 		// if the user selects the current book shelf, it doesn't need to perform the update
 		if (book.shelf !== shelf) {
 			BooksAPI.update(book, shelf).then(() => {
-				this.arrangeBooks(book, shelf);
+				book.shelf = shelf;
+				this.setState({books: this.state.books.filter((b) => b.id !== book.id).concat(book)});
 			});
 		}
-	};
-
-	/**
-	 * Organize a book according to its shelf after the updating process
-	 * @param book
-	 * @param shelf
-	 */
-	arrangeBooks = (book, shelf) => {
-		// checking if the book exists in the current state
-		const index = this.state.books.findIndex(currentBook => currentBook.id === book.id);
-		let books = this.state.books;
-
-		if (index > 0) { // if the book exists
-			// maps through the current state books to modify its shelf according to user
-			// modification (passed as parameter)
-			books.filter(_ => _.id === book.id)[0].shelf = shelf;
-
-		} else { // if it doesn't exists yet
-			// sets the book shelf
-			book.shelf = shelf;
-
-			// add to current books
-			books.push(book);
-		}
-
-		// finally update the state
-		this.setState({books});
 	};
 
 	render() {
 		// creates a constant that represents the books of current state
 		const {books} = this.state;
-		// creates the three shelves
+		// creates the three shelves. we will map through it to render the BookShelf
 		const shelves = [
 			{title: 'Currently Reading', shelf: "currentlyReading", books},
 			{title: 'Want to Read', shelf: 'wantToRead', books},
@@ -79,14 +53,12 @@ class BooksApp extends Component {
 			  <Route exact path="/" render={() => (
 				<div className="list-books">
 					<div className="list-books-title">
-						<h1>MyReads</h1>
+						<h1>@erikateh MyReads</h1>
 					</div>
-					{shelves.map(_ => (
+					{shelves.map(shelf => (
 					  <BookShelf
-						key={_.title}
-						shelf={_.shelf}
-						title={_.title}
-						books={_.books}
+					    shelf={shelf}
+					    key={shelf.title}
 						moveBook={this.moveBook}
 					  />
 					))}
