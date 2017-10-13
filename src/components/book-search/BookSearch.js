@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import BookShelf from './BookShelf';
-import * as BooksAPI from './BooksAPI';
-import SearchBar from './SearchBar';
+import BookShelf from '../book-shelf/BookShelf';
+import * as BooksAPI from '../../BooksAPI';
+import SearchBar from '../seach-bar/SearchBar';
 
 /**
  * Component that represents the search page
