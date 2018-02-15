@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/components/book-shelf/BookShelf.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">All files</a> / <a href="index.html">src/components/book-shelf</a> BookShelf.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">88.89% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>8/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">70% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>7/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">83.33% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>5/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">88.89% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>8/9</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
+&nbsp;
+/**
+ * Components that represents a shelf which a book can be moved to
+ * @param shelf the way the API understands a shelf
+ * @param moveBook a method that is called to move a book from a shelf to another
+ * @returns {XML}
+ * @constructor
+ */
+const BookShelf = ({shelf, moveBook}) =&gt; {
+	// as this component is used for both Main and Search pages, I created a method to distinguish the both usages
+	// if the shelf passed is equals to 'All', it means the components is being used inside BookSearch page,
+	// else we need to filter the books according to the shelf passed as props
+&nbsp;
+	const currentBooks = (shelf.shelf === 'All')
+	  ? <span class="branch-0 cbranch-no" title="branch not covered" >shelf.books</span>
+	    : shelf.books.filter(book =&gt; book.shelf === shelf.shelf);
+&nbsp;
+	// the select options
+	const options = [
+		{value: "moveTo", label: "Move to..."},
+		{value: "currentlyReading", label: "Currently Reading"},
+		{value: "wantToRead", label: "Want to Read"},
+		{value: "read", label: "Read"},
+		{value: "none", label: "None"}
+	];
+&nbsp;
+	return (
+	  &lt;div className="list-books-content"&gt;
+		  &lt;div className="bookshelf"&gt;
+			  &lt;h2 className="bookshelf-title"&gt;{shelf.title}&lt;/h2&gt;
+			  &lt;div className="bookshelf-books"&gt;
+				  &lt;ol className="books-grid"&gt;
+					  {currentBooks &amp;&amp; currentBooks.map(book =&gt; (
+						&lt;li key={book.id}&gt;
+							&lt;div className="book"&gt;
+								&lt;div className="book-top"&gt;
+									&lt;div className="book-cover" style={{
+										width: 128,
+										height: 193,
+										backgroundImage: `url(${book.imageLinks &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >book.imageLinks.smallThumbnail}</span>)`
+									}}&gt;&lt;/div&gt;
+									&lt;div className="book-shelf-changer"&gt;
+										&lt;select onChange={(e) =&gt; moveBook(book, e.target.value)}
+										        value={book.shelf}&gt;
+											{options.map(option =&gt; (
+											  &lt;option className={option.value === book.shelf ? 'selected-book' : ''}
+											          disabled={option.value === 'moveTo'}
+											          key={option.label}
+											          value={option.value}&gt;{option.label}&lt;/option&gt;
+											))}
+										&lt;/select&gt;
+									&lt;/div&gt;
+								&lt;/div&gt;
+								&lt;div className="book-title"&gt;{book.title}&lt;/div&gt;
+								{book.authors &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >book.authors.map(<span class="fstat-no" title="function not covered" >au</span>thor =&gt; (</span>
+<span class="cstat-no" title="statement not covered" >								  &lt;div key={author} className="book-authors"&gt;{author}&lt;/div&gt;</span>
+								))}
+							&lt;/div&gt;
+						&lt;/li&gt;
+					  ))}
+				  &lt;/ol&gt;
+			  &lt;/div&gt;
+		  &lt;/div&gt;
+	  &lt;/div&gt;
+	)
+};
+export default BookShelf</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Oct 24 2017 11:07:28 GMT-0400 (-04)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

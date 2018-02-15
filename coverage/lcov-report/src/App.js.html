@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/App.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">All files</a> / <a href="index.html">src</a> App.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/12</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, {Component} from 'react';
+import {Route} from 'react-router-dom';
+import {Link} from 'react-router-dom';
+import * as BooksAPI from './BooksAPI'
+import './App.css';
+import BookShelf from "./components/book-shelf/BookShelf";
+import BookSearch from "./components/book-search/BookSearch";
+&nbsp;
+/**
+ * Represents the main page with all the shelves
+ */
+class BooksApp extends Component {
+	// initializes the books
+	state = {
+		books: []
+	};
+&nbsp;
+<span class="fstat-no" title="function not covered" >	co</span>mponentDidMount() {
+		// send a request to BooksAPI the get my current books
+<span class="cstat-no" title="statement not covered" >		BooksAPI.getAll().then(<span class="fstat-no" title="function not covered" >bo</span>oks =&gt; <span class="cstat-no" title="statement not covered" >this.setState({books}))</span>;</span>
+	}
+&nbsp;
+	/**
+	 * Moves a book to a specific shelf
+	 * @param book
+	 * @param shelf
+	 */
+	moveBook = <span class="fstat-no" title="function not covered" >(b</span>ook, shelf) =&gt; {
+<span class="cstat-no" title="statement not covered" >		console.log("moving book");</span>
+		// if the user selects the current book shelf, it doesn't need to perform the update
+<span class="cstat-no" title="statement not covered" >		if (book.shelf !== shelf) {</span>
+<span class="cstat-no" title="statement not covered" >			BooksAPI.update(book, shelf).then(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >				book.shelf = shelf;</span>
+<span class="cstat-no" title="statement not covered" >				this.setState({books: this.state.books.filter(<span class="fstat-no" title="function not covered" >(b</span>) =&gt; <span class="cstat-no" title="statement not covered" >b.id !== book.id)</span>.concat(book)});</span>
+			});
+		}
+	};
+&nbsp;
+<span class="fstat-no" title="function not covered" >	re</span>nder() {
+		// creates a constant that represents the books of current state
+		const {books} = <span class="cstat-no" title="statement not covered" >this.state;</span>
+		// creates the three shelves. we will map through it to render the BookShelf
+		const shelves = <span class="cstat-no" title="statement not covered" >[</span>
+			{title: 'Currently Reading', shelf: "currentlyReading", books},
+			{title: 'Want to Read', shelf: 'wantToRead', books},
+			{title: 'Read', shelf: 'read', books}
+		];
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		return (</span>
+		  &lt;div className="app"&gt;
+			  &lt;Route exact path="/" render={<span class="fstat-no" title="function not covered" >()</span> =&gt; (
+<span class="cstat-no" title="statement not covered" >				&lt;div className="list-books"&gt;</span>
+					&lt;div className="list-books-title"&gt;
+						&lt;h1&gt;@erikateh MyReads&lt;/h1&gt;
+					&lt;/div&gt;
+					{shelves.map(<span class="fstat-no" title="function not covered" >sh</span>elf =&gt; (
+<span class="cstat-no" title="statement not covered" >					  &lt;BookShelf</span>
+					    shelf={shelf}
+					    key={shelf.title}
+						moveBook={this.moveBook}
+					  /&gt;
+					))}
+					&lt;div className="open-search"&gt;
+						&lt;Link
+						  to="/search"&gt;
+							Add a book
+						&lt;/Link&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			  )}/&gt;
+&nbsp;
+&nbsp;
+			  &lt;Route exact path="/search" render={<span class="fstat-no" title="function not covered" >()</span> =&gt; (
+<span class="cstat-no" title="statement not covered" >				&lt;BookSearch</span>
+				  moveBook={this.moveBook}
+				  currentBooks={books}/&gt;
+			  )}/&gt;
+		  &lt;/div&gt;
+		)
+	}
+}
+&nbsp;
+export default BooksApp
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Oct 24 2017 11:07:28 GMT-0400 (-04)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

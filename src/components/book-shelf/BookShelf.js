@@ -11,7 +11,10 @@ const BookShelf = ({shelf, moveBook}) => {
 	// as this component is used for both Main and Search pages, I created a method to distinguish the both usages
 	// if the shelf passed is equals to 'All', it means the components is being used inside BookSearch page,
 	// else we need to filter the books according to the shelf passed as props
-	const currentBooks = shelf.shelf === 'All' ? shelf.books : shelf.books.filter(_ => _.shelf === shelf.shelf);
+
+	const currentBooks = (shelf.shelf === 'All')
+	  ? shelf.books
+	    : shelf.books.filter(book => book.shelf === shelf.shelf);
 
 	// the select options
 	const options = [

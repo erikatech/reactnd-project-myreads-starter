@@ -17,10 +17,7 @@ class BooksApp extends Component {
 
 	componentDidMount() {
 		// send a request to BooksAPI the get my current books
-		BooksAPI.getAll().then((books) => {
-			// updates the current state
-			this.setState({books});
-		})
+		BooksAPI.getAll().then(books => this.setState({books}));
 	}
 
 	/**
@@ -29,6 +26,7 @@ class BooksApp extends Component {
 	 * @param shelf
 	 */
 	moveBook = (book, shelf) => {
+		console.log("moving book");
 		// if the user selects the current book shelf, it doesn't need to perform the update
 		if (book.shelf !== shelf) {
 			BooksAPI.update(book, shelf).then(() => {
@@ -75,7 +73,7 @@ class BooksApp extends Component {
 			  <Route exact path="/search" render={() => (
 				<BookSearch
 				  moveBook={this.moveBook}
-				  currentBooks={this.state.books}/>
+				  currentBooks={books}/>
 			  )}/>
 		  </div>
 		)

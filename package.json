@@ -1,20 +1,37 @@
 {
+  "name": "erikatech-myreads",
+
   "dependencies": {
     "prop-types": "^15.5.8",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "react-router-dom": "^4.2.2",
+    "react-scripts": "1.0.10",
     "react-throttle": "^0.3.0"
   },
-  "homepage": "http://erikatech.github.io/reactnd-project-myreads-starter",
+
   "devDependencies": {
-    "gh-pages": "^1.0.0",
-    "react-scripts": "0.9.5"
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-16": "^1.0.2",
+    "enzyme-to-json": "^3.1.4",
+    "jest-localstorage-mock": "^2.0.1",
+    "react-test-renderer": "^16.0.0"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,sx}",
+      "!src/index.js",
+      "!src/setupTests.js",
+      "!src/tempPolyfills.js"
+
+    ],
+    "snapshotSerializers": ["enzyme-to-json/serializer"]
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "test:coverage": "react-scripts test --env=jsdom --coverage",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"

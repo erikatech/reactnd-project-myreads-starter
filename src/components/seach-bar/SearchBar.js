@@ -11,6 +11,19 @@ class SearchBar extends Component {
 		term: ''
 	};
 
+	/**
+	 * Handler to deal with the input onChange callback
+	 * @param term the user input
+	 */
+	onInputChange(term) {
+		// updates the current state
+		this.setState({term});
+		if(term.trim().length){ // check if user input is empty
+			// call the outside method passing the user input
+			this.props.onSearchTermChange(term.trim());
+		}
+	}
+
 	render() {
 		return (
 		  <div className="search-books-bar">
@@ -26,19 +39,6 @@ class SearchBar extends Component {
 			  </div>
 		  </div>
 		)
-	}
-
-	/**
-	 * Handler to deal with the input onChange callback
-	 * @param term the user input
-	 */
-	onInputChange(term) {
-		// updates the current state
-		this.setState({term});
-		if(term.trim().length){ // check if user input is empty
-			// call the outside method passing the user input
-			this.props.onSearchTermChange(term.trim());
-		}
 	}
 }
 

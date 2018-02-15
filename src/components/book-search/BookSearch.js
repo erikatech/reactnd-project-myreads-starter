@@ -34,7 +34,7 @@ class BookSearch extends Component {
 				this.props.currentBooks.forEach(currentBook => {
 					result
 					  .filter(book => book.id === currentBook.id)
-					  .map(_ => _.shelf = currentBook.shelf);
+					  .map(book => book.shelf = currentBook.shelf);
 				});
 
 				// updates the current state
@@ -42,10 +42,6 @@ class BookSearch extends Component {
 			}
 		})
 	};
-
-
-
-
 
 	render() {
 		const shelf = {

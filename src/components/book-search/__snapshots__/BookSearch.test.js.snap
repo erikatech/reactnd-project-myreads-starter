@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BookSearch testing should render without crashing 1`] = `
+<div
+  className="search-books"
+>
+  <SearchBar
+    onSearchTermChange={[Function]}
+  />
+  <div
+    className="search-books-results"
+  >
+    <ol
+      className="books-grid"
+    >
+      <BookShelf
+        shelf={
+          Object {
+            "books": Array [],
+            "shelf": "All",
+          }
+        }
+      />
+    </ol>
+  </div>
+</div>
+`;

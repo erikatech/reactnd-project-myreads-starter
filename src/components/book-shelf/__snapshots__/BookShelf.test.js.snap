@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BookShelf testing should render without crashing 1`] = `
+<div
+  className="list-books-content"
+>
+  <div
+    className="bookshelf"
+  >
+    <h2
+      className="bookshelf-title"
+    >
+      Currently Reading
+    </h2>
+    <div
+      className="bookshelf-books"
+    >
+      <ol
+        className="books-grid"
+      >
+        <li
+          key="1"
+        >
+          <div
+            className="book"
+          >
+            <div
+              className="book-top"
+            >
+              <div
+                className="book-cover"
+                style={
+                  Object {
+                    "backgroundImage": "url(undefined)",
+                    "height": 193,
+                    "width": 128,
+                  }
+                }
+              />
+              <div
+                className="book-shelf-changer"
+              >
+                <select
+                  onChange={[Function]}
+                  value="currentlyReading"
+                >
+                  <option
+                    className=""
+                    disabled={true}
+                    key="Move to..."
+                    value="moveTo"
+                  >
+                    Move to...
+                  </option>
+                  <option
+                    className="selected-book"
+                    disabled={false}
+                    key="Currently Reading"
+                    value="currentlyReading"
+                  >
+                    Currently Reading
+                  </option>
+                  <option
+                    className=""
+                    disabled={false}
+                    key="Want to Read"
+                    value="wantToRead"
+                  >
+                    Want to Read
+                  </option>
+                  <option
+                    className=""
+                    disabled={false}
+                    key="Read"
+                    value="read"
+                  >
+                    Read
+                  </option>
+                  <option
+                    className=""
+                    disabled={false}
+                    key="None"
+                    value="none"
+                  >
+                    None
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div
+              className="book-title"
+            />
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</div>
+`;
